@@ -6,7 +6,7 @@ Commands that are run to get the G to listen:
 
 1.
 ```shell
-googlesamples-assistant-hotword --project-id jubilant-    octo-pancake-96395 --device-model-id jubilant-octo-pancake-96395-stream    y-boi-am50ic
+googlesamples-assistant-hotword --project-id jubilant-octo-pancake-96395 --device-model-id jubilant-octo-pancake-96395-streamy-boi-am50ic
 ```
 This is for default
 
