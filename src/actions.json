@@ -1,7 +1,7 @@
 {
     "manifest": {
-        "displayName": "Railsbank Assitant",
-        "invocationName": "Railsbank Assitant",
+        "displayName": "railsbank assistant",
+        "invocationName": "railsbank assistant",
         "category": "PRODUCTIVITY"
     },
     "actions": [
@@ -18,7 +18,7 @@
                 "name": "com.tmd.intents.RailsbankAssistant.GetBalance",
                 "trigger": {
                     "queryPatterns": [
-                        "Get my balance"
+                        "get my balance"
                     ]
                 }
             },
