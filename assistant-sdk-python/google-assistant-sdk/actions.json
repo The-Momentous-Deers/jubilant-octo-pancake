@@ -18,13 +18,13 @@
                 "name": "com.tmd.intents.TestAssistant",
                 "parameters": [
                     {
-                        "name": "meep",
+                        "name": "cat",
                         "type": "SchemaOrg_Text"
                     }
                 ],
                 "trigger": {
                     "queryPatterns": [
-                        "test ($SchemaOrg_Text:meep)?"
+                        "test ($SchemaOrg_Text:cat)?"
                     ]
                 }
             },
@@ -34,14 +34,14 @@
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": "Meep! Meep!"
+                                    "textToSpeech": "Kitty! Kitty!"
                                 }
                             },
                             {
                                 "deviceExecution": {
                                     "command": "com.tmd.commands.TestAssistant",
                                     "params": {
-                                        "speed": "$meep"
+                                        "speed": "$cat"
                                     }
                                 }
                             }

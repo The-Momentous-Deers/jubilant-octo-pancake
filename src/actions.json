@@ -1,0 +1,54 @@
+{
+    "manifest": {
+        "displayName": "Test Assitant",
+        "invocationName": "Test Assitant",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "com.tmd.actions.TestAssistant",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.tmd.intents.TestAssistant",
+                "parameters": [
+                    {
+                        "name": "cat",
+                        "type": "SchemaOrg_Text"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "test ($SchemaOrg_Text:cat)?"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Kitty! Kitty!"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.tmd.commands.TestAssistant",
+                                    "params": {
+                                        "speed": "$cat"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
