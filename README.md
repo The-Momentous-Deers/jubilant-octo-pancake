@@ -5,16 +5,17 @@
 Commands that are run to get the G to listen:
 
 1.
+```shell
 googlesamples-assistant-hotword --project-id jubilant-    octo-pancake-96395 --device-model-id jubilant-octo-pancake-96395-stream    y-boi-am50ic
-
+```
 This is for default
 
 2. 
 
 (when in same dir as `hotword.py`)
-
+```shell
 python hotword.py --device-model-id jubilant-octo-pancake-96395-streamy-boi-am50ic
-
+```
 This allows us to use our custom actions  with the G
 
 ### Trello Board:
