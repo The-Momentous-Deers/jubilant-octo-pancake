@@ -1,0 +1,54 @@
+{
+    "manifest": {
+        "displayName": "Test Assitant",
+        "invocationName": "Test Assitant",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "com.tmd.actions.TestAssistant",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.tmd.intents.TestAssistant",
+                "parameters": [
+                    {
+                        "name": "meep",
+                        "type": "SchemaOrg_Text"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "test ($SchemaOrg_Text:meep)?"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Meep! Meep!"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.tmd.commands.TestAssistant",
+                                    "params": {
+                                        "speed": "$meep"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
