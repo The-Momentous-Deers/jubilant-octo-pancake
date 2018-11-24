@@ -58,7 +58,7 @@ def process_event(event):
     if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
         print()
 
-    print(event)
+    print("Event: ", event)
 
     if (event.type == EventType.ON_CONVERSATION_TURN_FINISHED and
             event.args and not event.args['with_follow_on_turn']):
@@ -66,18 +66,10 @@ def process_event(event):
     if event.type == EventType.ON_DEVICE_ACTION:
         for command, params in event.actions:
             print('Do command', command, 'with params', str(params))
-            if command == "action.devices.commands.OnOff":
-                if params['on']:
-                    print('Turning the LED on.')
-                else:
-                    print('Turning the LED off.')
-            if command == "com.tmd.commands.test":
-                if params['cat']:
-                    print('DingleBerryFuckNugget!')
-                    rb = RailsbankRequest()
-                    rb.getBalance()
-                else:
-                    print('waz')
+            if command == "com.tmd.commands.RailsbankAssistant.GetBalance":
+                print('Getting and Outputting Balance!')
+                rb = RailsbankRequest()
+                rb.getBalance()
 
 def main():
     parser = argparse.ArgumentParser(

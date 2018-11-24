@@ -1,12 +1,12 @@
 {
     "manifest": {
-        "displayName": "Test Assitant",
-        "invocationName": "Test Assitant",
+        "displayName": "Railsbank Assitant",
+        "invocationName": "Railsbank Assitant",
         "category": "PRODUCTIVITY"
     },
     "actions": [
         {
-            "name": "com.tmd.actions.TestAssistant",
+            "name": "com.tmd.actions.RailsbankAssistant.GetBalance",
             "availability": {
                 "deviceClasses": [
                     {
@@ -15,16 +15,10 @@
                 ]
             },
             "intent": {
-                "name": "com.tmd.intents.TestAssistant",
-                "parameters": [
-                    {
-                        "name": "cat",
-                        "type": "SchemaOrg_Text"
-                    }
-                ],
+                "name": "com.tmd.intents.RailsbankAssistant.GetBalance",
                 "trigger": {
                     "queryPatterns": [
-                        "test ($SchemaOrg_Text:cat)?"
+                        "Get my balance"
                     ]
                 }
             },
@@ -34,15 +28,12 @@
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": "Kitty! Kitty!"
+                                    "textToSpeech": "Getting your balance now"
                                 }
                             },
                             {
                                 "deviceExecution": {
-                                    "command": "com.tmd.commands.TestAssistant",
-                                    "params": {
-                                        "speed": "$cat"
-                                    }
+                                    "command": "com.tmd.commands.RailsbankAssistant.GetBalance"
                                 }
                             }
                         ]
