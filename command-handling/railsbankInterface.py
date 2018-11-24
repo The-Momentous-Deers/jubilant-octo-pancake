@@ -12,6 +12,8 @@ api_key = 'iyg7oiwx5c6t462y80vytq0qtotredni#u9cgcudk4b95czmprv809jmb2ltkd971j0d3
 
 class RailsbankRequest:
 
+    ledger_id = "5bf951a0-8c73-437c-ae59-ac60a0f9847e"
+
     def __init__(self):
         response = get('v1/customer/me')
         pprint.pprint(response)
@@ -55,12 +57,12 @@ class RailsbankRequest:
             })
         pprint.pprint(response)
         self.ledger_id = response['ledger_id']
+        print(self.ledger_id)
         pprint.pprint(response)
 
     def getBalance(self):
         response = get('v1/customer/ledgers/' + str(self.ledger_id))
-        pprint.pprint(response)
+        return response['amount']
 
 myrequest = RailsbankRequest()
-myrequest.makeLedger()
-myrequest.getBalance()
+print(myrequest.getBalance())
