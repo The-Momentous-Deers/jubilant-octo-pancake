@@ -25,7 +25,7 @@ class RailsbankRequest:
         '''
         response = post(
             'v1/customer/beneficiaries', {
-                'holder_id': self.customer_id,
+                'holder_id': self.enduser_id,
                 'asset_class': 'currency',
                 'asset_type': 'eur',
                 'iban': 'SK4402005678901234567890',
@@ -155,6 +155,19 @@ class RailsbankRequest:
         response = get('v1/customer/transactions/' + str(transaction_receive_id))
         pprint.pprint(response)
 
+    def addCard(self):
+        response = post(
+            '/v1/customer/cards', {
+                'card_progamme': 'some-chars',
+                'ledger_id': "{{"+self.ledger_id+"}}",
+                'partner_product': 'Railsbank-Direct-Debit-1',
+            })
+        pprint.pprint(response)
+        self.card_id = response['card_id']
+
+    def activateCard(self):
+        pass
+
 myrequest = RailsbankRequest()
 
 # These are for getting the balance.
@@ -169,4 +182,6 @@ myrequest.makePayment()
 # make payment
 # add benificary
 # request card
+print("WE ARE NOW REQUESTING A CARD")
 # notify when money enters account
+myrequest.addCard()
