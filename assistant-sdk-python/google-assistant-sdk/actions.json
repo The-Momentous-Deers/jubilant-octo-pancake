@@ -18,13 +18,21 @@
                 "name": "com.tmd.intents.TestAssistant",
                 "parameters": [
                     {
+<<<<<<< HEAD
                         "name": "cat",
+=======
+                        "name": "meep",
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
                         "type": "SchemaOrg_Text"
                     }
                 ],
                 "trigger": {
                     "queryPatterns": [
+<<<<<<< HEAD
                         "test ($SchemaOrg_Text:cat)?"
+=======
+                        "test ($SchemaOrg_Text:meep)?"
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
                     ]
                 }
             },
@@ -34,14 +42,22 @@
                         "items": [
                             {
                                 "simpleResponse": {
+<<<<<<< HEAD
                                     "textToSpeech": "Kitty! Kitty!"
+=======
+                                    "textToSpeech": "Meep! Meep!"
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
                                 }
                             },
                             {
                                 "deviceExecution": {
                                     "command": "com.tmd.commands.TestAssistant",
                                     "params": {
+<<<<<<< HEAD
                                         "speed": "$cat"
+=======
+                                        "speed": "$meep"
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
                                     }
                                 }
                             }

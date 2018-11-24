@@ -29,8 +29,11 @@ from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 
+<<<<<<< HEAD
 from railsbankInterface import RailsbankRequest
 
+=======
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
 try:
     FileNotFoundError
 except NameError:
@@ -72,10 +75,15 @@ def process_event(event):
                 else:
                     print('Turning the LED off.')
             if command == "com.tmd.commands.test":
+<<<<<<< HEAD
                 if params['cat']:
                     print('DingleBerryFuckNugget!')
                     rb = RailsbankRequest()
                     rb.getBalance()
+=======
+                if params['meep']:
+                    print('meep!')
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
                 else:
                     print('waz')
 

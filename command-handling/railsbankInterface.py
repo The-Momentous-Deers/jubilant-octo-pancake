@@ -63,3 +63,9 @@ class RailsbankRequest:
     def getBalance(self):
         response = get('v1/customer/ledgers/' + str(self.ledger_id))
         return response['amount']
+<<<<<<< HEAD
+=======
+
+myrequest = RailsbankRequest()
+print(myrequest.getBalance())
+>>>>>>> c3d40f438c660cff112fa9cfef8354983290df5d
